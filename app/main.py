@@ -1,9 +1,9 @@
 import tkinter as tk
-from views.login_view import LoginView
+from views.login_view import LoginView  # import relativo
 
 def main():
     root = tk.Tk()
-    app = LoginView(root)
+    LoginView(root)
     root.mainloop()
 
 if __name__ == '__main__':
