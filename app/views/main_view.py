@@ -30,3 +30,16 @@ class MainView:
 
     def abrir_relatorios(self):
         RelatorioView(tk.Toplevel(self.master))
+
+
+def abrir_clientes(self):
+    print("Abrindo Clientes...")
+    ClienteView(tk.Toplevel(self.master))
+
+def abrir_produtos(self):
+    print("Abrindo Produtos...")
+    ProdutoView(tk.Toplevel(self.master))
+
+def abrir_relatorios(self):
+    print("Abrindo Relatórios...")
+    RelatorioView(tk.Toplevel(self.master))

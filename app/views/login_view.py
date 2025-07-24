@@ -29,11 +29,15 @@ class LoginView:
         usuario = self.usuario.get()
         senha = self.senha.get()
         if autenticar_usuario(usuario, senha):
-            self.master.withdraw()
-            MainView(tk.Toplevel(self.master))
+            self.abrir_main_view()
         else:
             self.mensagem.config(text="Usuário ou senha inválidos")
 
     def pular_login(self):
+        self.abrir_main_view()
+
+    def abrir_main_view(self):
         self.master.withdraw()
-        MainView(tk.Toplevel(self.master))
+        janela_principal = tk.Toplevel(self.master)
+        MainView(janela_principal)
+        janela_principal.grab_set()
