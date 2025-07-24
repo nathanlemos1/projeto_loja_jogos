@@ -20,14 +20,23 @@ class ProdutoView:
         self.tipo.pack()
 
         tk.Button(master, text="Salvar", command=self.salvar).pack(pady=5)
+
         self.lista = tk.Text(master, height=10)
         self.lista.pack()
+
         self.carregar_produtos()
 
     def salvar(self):
-        cadastrar_produto(self.nome.get(), float(self.preco.get()), self.tipo.get())
-        self.carregar_produtos()
+        try:
+            nome = self.nome.get()
+            preco = float(self.preco.get())
+            tipo = self.tipo.get()
+            cadastrar_produto(nome, preco, tipo)
+            self.carregar_produtos()
+        except Exception as e:
+            print(f"Erro ao salvar produto: {e}")
+
     def carregar_produtos(self):
         self.lista.delete('1.0', tk.END)
         for p in listar_produtos():
-            self.lista.insert(tk.END, f"{p[0]} - {p[1]} - R${p[2]} - {p[3]}\n")
+            self.lista.insert(tk.END, f"{p[0]} - {p[1]} - R${p[2]:.2f} - {p[3]}\n")

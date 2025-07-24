@@ -20,13 +20,22 @@ class ClienteView:
         self.telefone.pack()
 
         tk.Button(master, text="Salvar", command=self.salvar).pack(pady=5)
+
         self.lista = tk.Text(master, height=10)
         self.lista.pack()
+
         self.carregar_clientes()
 
     def salvar(self):
-        cadastrar_cliente(self.nome.get(), self.email.get(), self.telefone.get())
-        self.carregar_clientes()
+        try:
+            nome = self.nome.get()
+            email = self.email.get()
+            telefone = self.telefone.get()
+            cadastrar_cliente(nome, email, telefone)
+            self.carregar_clientes()
+        except Exception as e:
+            print(f"Erro ao salvar cliente: {e}")
+
     def carregar_clientes(self):
         self.lista.delete('1.0', tk.END)
         for c in listar_clientes():
