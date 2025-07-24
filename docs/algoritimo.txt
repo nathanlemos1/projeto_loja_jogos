@@ -1,0 +1,52 @@
+1. Inicialização do Sistema
+1.1. Iniciar aplicação a partir do arquivo main.py
+1.2. Carregar variáveis de ambiente do arquivo .env
+1.3. Estabelecer conexão com o banco de dados MySQL
+1.4. Inicializar a interface gráfica principal (janela de login)
+
+2. Autenticação de Usuário
+2.1. Usuário insere login e senha
+2.2. Controlador de usuário verifica credenciais no banco de dados
+2.3. Se válido, redirecionar para tela principal do sistema
+2.4. Se inválido, exibir mensagem de erro
+
+3. Cadastro de Produtos
+3.1. Usuário acessa o menu "Produtos"
+3.2. Formulário é exibido com campos: nome, preço, categoria, estoque
+3.3. Ao clicar em "Salvar", o controller envia os dados para o model
+3.4. Model insere o produto no banco de dados
+3.5. Exibir mensagem de sucesso e atualizar a lista de produtos
+
+4. Cadastro de Clientes
+4.1. Acessar menu "Clientes"
+4.2. Formulário com campos: nome, CPF, telefone, email
+4.3. Ao salvar, dados são validados e enviados ao banco via model
+4.4. Lista de clientes é atualizada na view
+
+5. Cadastro de Usuários (Admin)
+5.1. Menu disponível somente para usuários com perfil de administrador
+5.2. Cadastro com: nome, login, senha (criptografada)
+5.3. Dados são validados e armazenados no banco
+
+6. Registro de Vendas
+6.1. Acessar menu "Nova Venda"
+6.2. Selecionar cliente
+6.3. Adicionar produtos à venda (com quantidade)
+6.4. Sistema calcula o total automaticamente
+6.5. Ao finalizar venda, é registrada nas tabelas vendas e itens_venda
+6.6. Estoque dos produtos é atualizado automaticamente
+6.7. Exibir recibo ou confirmação da venda
+
+7. Layout e Telas (Tkinter)
+7.1. Tela de Login
+7.2. Tela principal com menu lateral
+7.3. Telas de cadastro: produtos, clientes, usuários
+7.4. Tela de vendas
+7.5. Layout baseado em frames organizados por funcionalidade
+
+8. Arquitetura MVC
+8.1. Models: contêm classes de manipulação do banco (CRUD)
+8.2. Views: janelas construídas com Tkinter
+8.3. Controllers: lógica de negócio, validações e chamadas de model/view
+8.4. Comunicação entre as camadas é feita de forma desacoplada
+

@@ -1,0 +1,70 @@
+1. usuarios
+
+id_usuario (PK)
+
+nome
+
+login
+
+senha
+
+2. clientes
+
+id_cliente (PK)
+
+nome
+
+cpf
+
+telefone
+
+email
+
+3. produtos
+
+id_produto (PK)
+
+nome
+
+preco
+
+estoque
+
+categoria (opcional)
+
+4. vendas
+
+id_venda (PK)
+
+data
+
+id_cliente (FK → clientes.id_cliente)
+
+id_usuario (FK → usuarios.id_usuario)
+
+total
+
+5. itens_venda
+
+id_item (PK)
+
+id_venda (FK → vendas.id_venda)
+
+id_produto (FK → produtos.id_produto)
+
+quantidade
+
+preco_unitario
+
+subtotal
+
+RELACIONAMENTOS
+Um usuário realiza muitas vendas (1:N)
+
+Um cliente pode estar vinculado a muitas vendas (1:N)
+
+Uma venda possui muitos itens_venda (1:N)
+
+Cada item_venda refere-se a um produto (N:1)
+
+Cada produto pode estar presente em vários itens_venda (1:N)
