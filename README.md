@@ -12,7 +12,7 @@ O sistema visa permitir o gerenciamento completo de uma loja, incluindo **cadast
 
 - Python (linguagem principal)
 - Tkinter (interfaces gráficas)
-- SQLite (banco de dados relacional)
+- MySQL (banco de dados relacional)
 - Arquitetura MVC (Model - View - Controller)
 - Boas práticas de organização de código e documentação
 
