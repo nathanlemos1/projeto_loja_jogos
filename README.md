@@ -34,6 +34,7 @@ O sistema visa permitir o gerenciamento completo de uma loja, incluindo **cadast
 
 A organização do projeto foi feita de forma modular para facilitar a manutenção, separando responsabilidades de acordo com o padrão MVC:
 
+``` 
 projeto_loja_jogos/
 │
 ├── app/
@@ -75,6 +76,7 @@ projeto_loja_jogos/
 ├── .gitignore # Padrões de arquivos ignorados pelo Git
 └── README.md # Apresentação geral do projeto
 
+```
 
 ---
 
